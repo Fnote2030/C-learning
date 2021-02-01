@@ -67,3 +67,7 @@ int main()
     *p = 20;  //*在这里为解引用符  ，指向地址p所表示的变量
     printf("a=%d\n",a );
 }
+int sum(int x,int y)
+{
+
+}
