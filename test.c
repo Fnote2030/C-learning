@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include "add.c"
 
 //按位取反操作符号
 // int main()
@@ -32,6 +31,8 @@
 //     return 0;
 // }
 
+
+//调用
 // int main()
 // {   
 //     int a = 10;
@@ -39,6 +40,12 @@
 //     int c = Add(a,b);
 //     printf("sum=%d",c );
 // }
+// int Add(int x,int y)
+// {
+//     int z = x + y;
+//     return z;
+// }
+
 
 //函数的宏定义
 // #define Max(x, y) (x > y ? x : y)
@@ -57,7 +64,8 @@ int main()
     int *p = &a;
     printf("a=%d\n",a );
     printf("a的地址为%p\n",p );
-    printf("地址的长度%d\n", sizeof(p ));
+
+    printf("地址的长度%d\n", sizeof(p));
     //64位的操作系统的指针地址是八个字节，32位的操作系统的指针地址是四个字节
     printf("%d\n",sizeof(int *));
     printf("%d\n",sizeof(long *));
