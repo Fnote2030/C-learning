@@ -115,16 +115,16 @@ void ComputerMove(char board[ROW][COL],char board1[ROW][COL],char board2[ROW][CO
                     pow += (board2[i][j] - ' ' + 1) * (board2[i][j - 1] - ' ' + 1) * (board2[i][j + 1] - ' ' + 1) *
                            (((board1[i][j] == 'O') ^ (board1[i][j - 1] == 'O') ^ (board1[i][j + 1] == 'O')));
                 }
-            }
+            }                                                                       
             //所有竖的情况
             for (j = 0; j < col;j++)
             {
                 for (i = 1; i < row-1;i++)//一列的情况
                 {
-                    pow += (board1[i][j] - ' ' + 1) * (board1[i][j - 1] - ' ' + 1) * (board1[i][j + 1] - ' ' + 1) *
-                           (!((board2[i][j] == 'X') || (board2[i][j - 1] == 'X') || (board2[i][j + 1] == 'X')));
-                    pow += (board2[i][j] - ' ' + 1) * (board2[i][j - 1] - ' ' + 1) * (board2[i][j + 1] - ' ' + 1) *
-                           (((board1[i][j] == 'O') ^ (board1[i][j - 1] == 'O') ^ (board1[i][j + 1] == 'O')));
+                    pow += (board1[i][j] - ' ' + 1) * (board1[i-1][j] - ' ' + 1) * (board1[i+1][j] - ' ' + 1) *
+                           (!((board2[i][j] == 'X') || (board2[i-1][j] == 'X') || (board2[i+1][j] == 'X')));
+                    pow += (board2[i][j] - ' ' + 1) * (board2[i-1][j] - ' ' + 1) * (board2[i+1][j] - ' ' + 1) *
+                           (((board1[i][j] == 'O') ^ (board1[i-1][j] == 'O') ^ (board1[i+1][j] == 'O')));
                 }
             }
             //左上到右下方向的情况
@@ -169,7 +169,7 @@ void ComputerMove(char board[ROW][COL],char board1[ROW][COL],char board2[ROW][CO
                            (((board1[i][j] == 'O') ^ (board1[i - 1][j + 1] == 'O') ^ (board1[i + 1][j - 1] == 'O')));
                 }
             }
-            //printf("pow[%d][%d]=%d\n",w,l,pow);
+            printf("pow[%d][%d]=%d\n",w,l,pow);
             if (pow > maxpow) //将最大权分的位置存储起来
             {
                 x = w;
@@ -299,15 +299,6 @@ void game()
     DispalyBoard(board,ROW,COL); //打印
     while(1)
     {
-        //玩家下棋
-        PlayerMove(board,board2,ROW,COL);
-        DispalyBoard(board,ROW,COL);
-        //判断用户是否赢了
-        ret = IsWin(board, ROW, COL);  //四种情况1、玩家赢2、电脑赢3、平局4、继续
-        if(ret!='C')
-        {
-            break; //不是继续，跳出循环
-        }
         //电脑下棋
         ComputerMove(board,board1,board2,ROW,COL);
         DispalyBoard(board,ROW,COL);
@@ -317,7 +308,18 @@ void game()
         {
             break; //不是继续，跳出循环
         }
-    }
+
+        //玩家下棋
+        PlayerMove(board,board2,ROW,COL);
+        DispalyBoard(board,ROW,COL);
+        //判断用户是否赢了
+        ret = IsWin(board, ROW, COL);  //四种情况1、玩家赢2、电脑赢3、平局4、继续
+        if(ret!='C')
+        {
+            break; //不是继续，跳出循环
+        }
+    }//endwhile
+
     if('X'==ret)
     {
         printf("玩家赢！\n");
