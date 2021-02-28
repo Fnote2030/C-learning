@@ -40,12 +40,12 @@
 ## 5、break：直接跳出循环；
     ##6、continue：终止本次循环，continue后面的语句不再执行，进入下一次循环的入口判断；
 ## 7、键盘输入CTRL+Z，getchar就会获得EOF，不然getchar一次只能获得一个字节
-            ```
+```
             while((c=getchar())!=EOF ) 
             {
                 putchar(c );
             }
-            ```
+```
 
 # C语言的学习 3
 ## 1、输入缓冲区：
