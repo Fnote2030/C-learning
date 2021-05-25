@@ -123,22 +123,22 @@
 
 
 
-// //         《结构体成员相对结构体起始位置的偏移量》
-// //宏       size_t offsetof(structName ,memberName)
-// //         structName结构体类型  ，menberName结构体的成员 
-// struct S
-// {
-//     char c;
-//     int i;
-//     double d;
-// };
-// int main()
-// {
-//     printf("%d\n", (int)offsetof(struct S, c));
-//     printf("%d\n", (int)offsetof(struct S, i));
-//     printf("%d\n", (int)offsetof(struct S, d));
-//     return 0;
-// }
+//         《结构体成员相对结构体起始位置的偏移量》
+//宏       size_t offsetof(structName ,memberName)
+//         structName结构体类型  ，menberName结构体的成员 
+struct S
+{
+    char c;
+    int i;
+    double d;
+};
+int main()
+{
+    printf("%d\n", (int)offsetof(struct S, c));
+    printf("%d\n", (int)offsetof(struct S, i));
+    printf("%d\n", (int)offsetof(struct S, d));
+    return 0;
+}
 
 
 
@@ -176,16 +176,16 @@
 
 //             《位段》
 //int类型的位段，一次性开辟4个字节的空间，32个bit位 ，  :后面的数字不能大于32
-typedef struct S
-{
-    int a : 2;   //2
-    int b : 5;   //7 
-    int c : 10;  //17 -- 剩余15个bit位
-    int d : 30;  //bit位不够，继续开辟4个字节空间
-}S;
+// typedef struct S
+// {
+//     int a : 2;   //2
+//     int b : 5;   //7 
+//     int c : 10;  //17 -- 剩余15个bit位
+//     int d : 30;  //bit位不够，继续开辟4个字节空间
+// }S;
 
-int main()
-{
-    printf("%d\n",(int)(sizeof(S)));  //8个字节
-    return 0;
-}
+// int main()
+// {
+//     printf("%d\n",(int)(sizeof(S)));  //8个字节
+//     return 0;
+// }
