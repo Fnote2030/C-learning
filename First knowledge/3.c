@@ -28,12 +28,12 @@ int main()
     }
 }
 
-// //字符从两端移动，向中间汇聚
+// //字符从两端移动，向中间汇�?
 // int main()
 // {
 //     char arr1[256];
 //     char arr2[256];
-//     printf("请输入要演示字符(非中文)：\n");
+//     printf("请输入要演示字符(非中�?)：\n");
 //     //scanf("%s",arr1); //不能输入空格
 //     char str;
 //     int len = 0;
@@ -76,16 +76,16 @@ int main()
 //     printf("%d  %d",len1,len2);
 // }
 
-// //二分/折半查找法   适用于有顺序的序列
+// //二分/折半查找�?   适用于有顺序的序�?
 // int main()
 // {
 //     int k;
-//     printf("请输入你要查找的数字：");
+//     printf("请输入你要查找的数字�?");
 //     scanf("%d", &k);
 //     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 //     int sz = sizeof(arr) / sizeof(arr[0]);  //元素个数
-//     int left = 0;//左下标
-//     int right = sz-1;//右下标
+//     int left = 0;//左下�?
+//     int right = sz-1;//右下�?
 //     while(left <= right)
 //     {
 //         int mid = (left + right) / 2;//中间下标
@@ -99,7 +99,7 @@ int main()
 //         }
 //         else   
 //         {
-//             printf("找到了，下标是%d\n",mid);
+//             printf("找到了，下标�?%d\n",mid);
 //             break;
 //         }
 //     } 
@@ -130,7 +130,7 @@ int main()
 // }
  
 
-////输入缓冲区 
+////输入缓冲�? 
 // int main()
 // {
 //     int ret;
@@ -139,11 +139,11 @@ int main()
 //     printf("请输入密码：");
 //     scanf("%s",password);   //从输入缓冲区获得数据,缓冲区有密码+\n,读走密码留下\n 
 //     //只读取输入缓冲区数据第一个空格之前的字符
-//     printf("设置的密码为：%s\n",password);
-//     while ((k = getchar()) != '\n')//读取输入缓冲区第一个空格之后的所有数据
+//     printf("设置的密码为�?%s\n",password);
+//     while ((k = getchar()) != '\n')//读取输入缓冲区第一个空格之后的所有数�?
 //     {
 //         ;
-//     }    //清空输入缓冲区
+//     }    //清空输入缓冲�?
 //     printf("请确认（y/n）：");
 //     ret = getchar();  //从输入缓冲区获得数据
 //     if('y'==ret)
